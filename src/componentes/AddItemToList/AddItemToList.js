@@ -12,7 +12,7 @@ const AddItemToList = () => {
 
   const addItemToList = (e) => {
     e.preventDefault();
-    setItems([...items, inputText]);
+    setItems([...items, { value: inputText, state: "TODO" }]);
     setInputText("");
   };
 

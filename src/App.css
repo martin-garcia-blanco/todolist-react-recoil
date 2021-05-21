@@ -44,3 +44,14 @@
   min-width: 300px;
   width: 100%;
 }
+
+.App-columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.App-columns > div {
+  width: 30%;
+  color: white;
+}

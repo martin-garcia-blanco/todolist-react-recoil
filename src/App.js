@@ -1,14 +1,11 @@
-import { useRecoilValue } from "recoil";
 import "./App.css";
 import AddItemToList from "./componentes/AddItemToList/AddItemToList";
+import DoingList from "./componentes/DoingList/DoingList";
+import DoneList from "./componentes/DoneList/DoneList";
 import Header from "./componentes/Header/Header";
-import Item from "./componentes/Item/Item";
-import { todoListState } from "./Recoil/todoListState";
+import ToDoList from "./componentes/ToDoList/ToDoList";
 
 function App() {
-  const todoList = useRecoilValue(todoListState);
-  console.log(todoList);
-
   return (
     <div className="App">
       <header className="App-header">
@@ -16,8 +13,11 @@ function App() {
       </header>
       <main className="App-main">
         <AddItemToList />
-        {todoList &&
-          todoList.map((item, index) => <Item value={item} id={index} />)}
+        <div className="App-columns">
+          <ToDoList />
+          <DoingList />
+          <DoneList />
+        </div>
       </main>
     </div>
   );
